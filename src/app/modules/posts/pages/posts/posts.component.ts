@@ -30,4 +30,9 @@ export class PostsComponent implements OnInit {
 
   }
 
+  showUserModal(data: any){
+
+    console.log(data);
+  }
+
 }
