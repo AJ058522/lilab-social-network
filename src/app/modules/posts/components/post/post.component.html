@@ -12,7 +12,8 @@
                 </figure>
             </div>
             <div class="media-content">
-                <p class="title is-4" (click)="showAuthor(post.owner)">{{post.owner.firstName}} {{post.owner.lastName}}</p>
+                <p class="title is-4" (click)="showAuthor(post.owner)">{{post.owner.firstName}} {{post.owner.lastName}}
+                </p>
                 <p class="subtitle is-6">@{{post.owner.firstName}}{{post.owner.lastName}}</p>
             </div>
         </div>
@@ -30,7 +31,7 @@
             <span class="tag is-success ml-2">Likes: {{post.likes}}</span>
         </div>
         <div class="content">
-            <span class="tag is-info ml-2" *ngFor="let tag of post.tags">#{{tag}}</span>
+            <span class="tag is-info ml-2" *ngFor="let tag of post.tags" (click)="selectTag(tag)">#{{tag}}</span>
         </div>
     </div>
 </div>

@@ -35,4 +35,9 @@ export class PostsComponent implements OnInit {
     console.log(data);
   }
 
+  filterByTag(tag: any){
+
+    console.log(tag);
+  }
+
 }

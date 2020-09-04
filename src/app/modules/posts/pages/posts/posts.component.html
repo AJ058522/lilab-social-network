@@ -1,7 +1,8 @@
 <div class="container is-fluid">
     <section class="section">
         <div class="container">
-            <app-post *ngFor="let post of postsList" [post]="post" (authorData)="showUserModal($event)"></app-post>
+            <app-post *ngFor="let post of postsList" [post]="post" (authorData)="showUserModal($event)"
+                (tag)="filterByTag($event)"></app-post>
         </div>
     </section>
 </div>

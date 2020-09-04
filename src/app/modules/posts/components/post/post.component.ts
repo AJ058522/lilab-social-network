@@ -11,6 +11,7 @@ export class PostComponent implements OnInit {
 
   @Input('post') post: PostModel;
   @Output() authorData = new EventEmitter<UserModel>();
+  @Output() tag = new EventEmitter<string>();
 
   constructor() { }
 
@@ -19,6 +20,11 @@ export class PostComponent implements OnInit {
   showAuthor(author: UserModel){
     
     this.authorData.emit(author);
+  }
+
+  selectTag(tag: string){
+    
+    this.tag.emit(tag);
   }
 
 }
