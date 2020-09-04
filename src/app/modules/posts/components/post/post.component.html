@@ -1,0 +1,36 @@
+<div class="card">
+    <div class="card-image">
+        <figure class="image is-4by3">
+            <img [src]="post.image" alt="Placeholder image">
+        </figure>
+    </div>
+    <div class="card-content">
+        <div class="media">
+            <div class="media-left">
+                <figure class="image is-48x48">
+                    <img [src]="post.owner.picture" alt="Placeholder image">
+                </figure>
+            </div>
+            <div class="media-content">
+                <p class="title is-4">{{post.owner.firstName}} {{post.owner.lastName}}</p>
+                <p class="subtitle is-6">@{{post.owner.firstName}}{{post.owner.lastName}}</p>
+            </div>
+        </div>
+
+        <div class="content">
+            {{post.text}}
+            <a [href]="post.link" target="_blank" *ngIf="post.link"><span class="tag is-link">Link</span></a>
+            <br>
+            <time datetime="2016-1-1">{{post.publishDate | date:'h:mm a'}}</time>
+        </div>
+        <div class="content">
+            {{post.text}}
+        </div>
+        <div class="content">
+            <span class="tag is-success ml-2">Likes: {{post.likes}}</span>
+        </div>
+        <div class="content">
+            <span class="tag is-info ml-2" *ngFor="let tag of post.tags">#{{tag}}</span>
+        </div>
+    </div>
+</div>
