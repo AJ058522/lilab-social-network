@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PostsService } from '../../../../core/services/posts.service';
 import { PostModel } from '../../../../shared/models/post-model';
+import { UserModel } from '../../../../shared/models/user-model';
 
 @Component({
   selector: 'app-posts',
@@ -10,6 +11,8 @@ import { PostModel } from '../../../../shared/models/post-model';
 export class PostsComponent implements OnInit {
 
   postsList: Array<PostModel>[] = [];
+  userModal: boolean = false;
+  userData: UserModel;
 
   constructor(private postsService: PostsService) { }
 
@@ -30,9 +33,14 @@ export class PostsComponent implements OnInit {
 
   }
 
-  showUserModal(data: any){
+  showUserModal(userData: UserModel){
 
-    console.log(data);
+    this.userData = userData;
+    this.userModal = true;
+  }
+
+  closeUserModal(){
+    this.userModal = false;
   }
 
   filterByTag(tag: any){

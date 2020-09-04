@@ -6,3 +6,11 @@
         </div>
     </section>
 </div>
+
+<div class="modal" [ngClass]="{'is-active': userModal}">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+        <app-user [userData]="userData" *ngIf="userModal"></app-user>
+    </div>
+    <button class="modal-close is-large" aria-label="close" (click)="closeUserModal()"></button>
+</div>

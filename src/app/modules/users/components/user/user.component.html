@@ -1,0 +1,22 @@
+<div class="container is-fluid">
+    <section class="section">
+        <div class="container">
+            <div class="card">
+                <div class="card-content">
+                    <div class="media">
+                        <div class="media-left" *ngIf="user">
+                            <figure class="image is-48x48">
+                                <img [src]="user.picture" alt="Placeholder image">
+                            </figure>
+                        </div>
+                        <div class="media-content">
+                            <p class="title is-4"><b>Nombre: </b>{{user.firstName}} {{user.lastName}}</p>
+                            <p class="subtitle is-6"><b>Título: </b>{{user.title}}</p>
+                            <p class="subtitle is-6"><b>Email: </b>{{user.email}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
