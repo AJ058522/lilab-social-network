@@ -16,6 +16,7 @@ export class PostComponent implements OnChanges{
   @Output() tag = new EventEmitter<string>();
   totalComents: number = 0;
   comentsList: Array<CommentModel>[] = [];
+  commentModal: boolean = false;
 
   constructor(private commentsService: CommentsService) { }
 
@@ -51,7 +52,12 @@ export class PostComponent implements OnChanges{
 
   showComents(){
     
-    console.log(this.totalComents);
+    this.commentModal = true;    
+  }
+
+  closeCommentModal(){
+    
+    this.commentModal = false;
   }
 
 }
