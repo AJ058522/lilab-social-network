@@ -12,7 +12,24 @@ export class PostsService {
   async getPost(postId: string = null) {
 
     const id: string = (postId)? postId : '';
-    const URL = BASE_URL + "/post/" + id;
+    const URL = BASE_URL + '/post/' + id;
+
+    return new Promise((resolve, reject) => {
+
+      const httpRequest = this.http.get(URL);
+      httpRequest.subscribe(data => {
+        resolve(data);
+      }, (err) => {
+        reject(err);
+      });
+
+    });
+
+  }
+
+  async getPostByTag(tag: string) {
+
+    const URL = BASE_URL + '/tag/' + tag + '/post';
 
     return new Promise((resolve, reject) => {
 

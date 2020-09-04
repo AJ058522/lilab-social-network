@@ -33,6 +33,18 @@ export class PostsComponent implements OnInit {
 
   }
 
+  getPostByTag(tag: string) {
+
+    this.postsService.getPostByTag(tag)
+      .then(data => {
+        const response: any = data;
+        this.postsList = response.data;
+      },
+        error => {
+        });
+
+  }
+
   showUserModal(userData: UserModel){
 
     this.userData = userData;
@@ -45,7 +57,7 @@ export class PostsComponent implements OnInit {
 
   filterByTag(tag: any){
 
-    console.log(tag);
+    this.getPostByTag(tag)
   }
 
 }
