@@ -29,6 +29,7 @@
         </div>
         <div class="content">
             <span class="tag is-success ml-2">Likes: {{post.likes}}</span>
+            <span class="tag is-success ml-2" (click)="showComents()">Coments: {{totalComents}}</span>
         </div>
         <div class="content">
             <span class="tag is-info ml-2" *ngFor="let tag of post.tags" (click)="selectTag(tag)">#{{tag}}</span>
