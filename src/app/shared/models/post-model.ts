@@ -2,7 +2,7 @@ import { UserModel } from './user-model';
 
 export interface PostModel {
     "owner": UserModel,
-    "id": number,
+    "id": string,
     "image": string,
     "publishDate": string,
     "text": string,
