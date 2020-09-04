@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "lilab-social-network"
+    }
+  },
+  "defaultProject": "lilab-social-network",
+  "cli": {
+    "analytics": "93295f9d-c35c-4d76-b72b-c711826d3ac0"
+  }
 }
